@@ -30,9 +30,9 @@ jobs:
 
       run: |        
 
-        docker build . --file Dockerfile --tag tejaswani1981/devops-python-server:latest
+        docker build . --file Dockerfile --tag tejaswani1981/devops-images:v1
 
         docker login -u $USER -p $PASS        
 
-        docker push tejaswani1981/devops-python-server:latest
+        docker push tejaswani1981/devops-images:v1
  
