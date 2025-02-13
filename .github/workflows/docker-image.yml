@@ -1,0 +1,38 @@
+name: Docker Build Image CI
+ 
+on:
+
+  push:
+
+    branches: [ master ]
+
+  pull_request:
+
+    branches: [ master ]
+ 
+jobs:
+ 
+  build:
+ 
+    runs-on: ubuntu-latest
+ 
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - name: Build the Docker image
+
+      env:
+
+        USER: ${{ secrets.USER }}
+
+        PASS: ${{ secrets.PASS }}   
+
+      run: |        
+
+        docker build . --file Dockerfile --tag tejaswani1981/devops-python-server:latest
+
+        docker login -u $USER -p $PASS        
+
+        docker push tejaswani1981/devops-python-server:latest
+ 
