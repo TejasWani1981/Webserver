@@ -30,9 +30,9 @@ jobs:
 
       run: |        
 
-        docker build . --file Dockerfile --tag tejaswani1981/devops-images:v4
+        docker build . --file Dockerfile --tag tejaswani1981/devops-images:v5
 
         docker login -u $USER -p $PASS        
  
-        docker push tejaswani1981/devops-images:v4
+        docker push tejaswani1981/devops-images:v5
  
